@@ -14,22 +14,22 @@ db.once("open", () => {
 });
 
 const AthleteSchema = mongoose.Schema({
-  Name: String,
-  Date_of_Birth: String,
-  Nationality: String,
-  Location: String,
-  Association: Array,
-  Team: Array,
-  Gender: String,
-  Sports: Array,
-  About: String,
-  Interests: String,
-  Charities: String,
-  Social_Media_Handles: Object,
-  Pets: String,
-  Drinks_Alcohol: Boolean,
-  Married: Boolean,
-  Profile_Image: String
+  name: String,
+  date_of_birth: String,
+  nationality: String,
+  location: String,
+  associations: Array,
+  teams: Array,
+  gender: String,
+  sports: Array,
+  about: String,
+  interests: String,
+  charities: String,
+  social_media: Object,
+  pets: String,
+  drinks_alcohol: Boolean,
+  married: Boolean,
+  profile_image: String
 });
 
 const Athlete = mongoose.model("Athletes", AthleteSchema);

@@ -1,0 +1,40 @@
+<md-card
+  ng-repeat="athlete in athletes"
+  flex="40"
+  ng-init="athlete.profile_image = athlete.profile_image || 'https://www.bluefrosthvac.com/wp-content/uploads/2019/08/default-person.png'"
+  class="athlete"
+>
+  <img ng-src="{{athlete.profile_image}}" alt=""/>
+  <md-card-content>
+    <div class="athlete-info" ng-show="!showDetails">
+      <h2 class="md-name">{{athlete.name}}</h2>
+      <h3>{{athlete.nationality}}</h3>
+      <p class="md-location">{{athlete.location}}</p>
+    </div>
+
+    <div class="athlete-details" ng-show="showDetails">
+        <p><strong>Sports</strong></p>
+        <div class="athlete-sports" ng-repeat="sport in athlete.sports" layout="row">
+            <p><md-icon class="mdi mdi-run"></md-icon>{{sport}}</p>
+        </div>
+        <p><strong>Teams</strong></p>
+        <div class="athlete-teams" ng-repeat="team in athlete.teams">
+            <p><md-icon class="mdi mdi-run"></md-icon>{{team}}</p>
+        </div>
+    </div>
+
+    <div layout="row">
+      <md-button ng-click="showDetails = true" ng-show="!showDetails"
+        >Basic</md-button
+      >
+      <md-button ng-click="showDetails = false" ng-show="showDetails"
+        >Details</md-button
+      >
+
+    <div layout="row">
+      <md-button ng-click="vm.editAthlete(athlete)" class="md-primary">
+        Edit
+      </md-button>
+    </div>
+  </md-card-content>
+</md-card>
