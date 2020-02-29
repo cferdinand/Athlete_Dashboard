@@ -1,0 +1,42 @@
+<md-content layout-padding ng-show=showAbout>
+    <form>
+        <h2>About</h2>
+      <md-input-container>
+        <label for="description">Description*</label>
+        <input type="text" id="description" md-autofocus ng-model="athlete.description" required=""/>
+      </md-input-container>
+      <md-input-container>
+        <label for="location">location*</label>
+        <input type="text" id="location" ng-model="athlete.location" required=""/>
+      </md-input-container>
+      <md-input-container>
+        <label for="Team">Team*</label>
+        <input
+          type="text"
+          id="team"
+          ng-model="athlete.team"
+          required=""
+        ></input>
+      </md-input-container>
+      <md-input-container>
+        <label for="profile_image">Image</label>
+        <input type="text" id="profile_image" ng-model="athlete.profile_image" />
+      </md-input-container>
+      <md-input-container>
+        <label for="image">Charities</label>
+        <input ng-model="athlete.charities" required=""></input>
+      </md-input-container>
+      <md-input-container>
+        <label for="interests">Interests</label>
+        <select ng-model="athlete.interests" required=""></select>
+      </md-input-container>
+      <div class="navigation" layout="row" layout-align="center center">
+          <md-button
+          ng-click="showSummary = true"
+          class="md-primary"
+          >Next ></md-button
+          >
+      </div>
+    </form>
+  </md-content>
+  

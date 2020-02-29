@@ -19,7 +19,6 @@
         // vm.editing = true;
         // openSidebar();
         // vm.athlete = athlete;
-        console.log(athlete);
         $state.go("athletes.edit", {
           id: athlete._id,
           athlete: athlete

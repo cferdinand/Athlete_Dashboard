@@ -1,0 +1,42 @@
+<md-toolbar>
+  <h1 class="md-toolbar-tools">Add an Athlete</h1>
+</md-toolbar>
+<div class="links" layout="row" layout-align="center center">
+  <md-button ng-click="vm.routeToAbout()">About</md-button>
+  <md-button ng-click="vm.routeToBasic()">Basic</md-button>
+  <md-button ng-click="vm.routeToSummary()">Summary</md-button>
+</div>
+
+<md-content>
+  <basic-anthlete></basic-anthlete>
+</md-content>
+
+<md-content>
+  <about-athlete
+    athletes="vm.athletes"
+    class="md-padding"
+    layout="row"
+    layout-wrap
+  ></about-athlete>
+</md-content>
+
+<md-button
+  ng-if="!editing"
+  ng-click="vm.saveAthlete(athlete)"
+  class="md-primary"
+>
+  Save
+</md-button>
+<md-button ng-click="vm.saveEdit()" ng-if="editing" class="md-primary">
+  Save Edit
+</md-button>
+<md-button class="md-warn" ng-click="vm.closeForm()">Cancel</md-button>
+
+<md-content>
+  <athletes-card
+    athletes="vm.athletes"
+    class="md-padding"
+    layout="row"
+    layout-wrap
+  ></athletes-card>
+</md-content>

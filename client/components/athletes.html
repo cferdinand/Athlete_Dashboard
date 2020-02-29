@@ -1,12 +1,14 @@
-<md-toolbar>
+<md-toolbar ng-hide="hideAthletes">
   <div class="md-toolbar-tools">
     <p><strong>Athletes Dashboard</strong></p>
-    <md-button>
+    <md-button ng-click="vm.addAthlete()">
       <md-icon class="mdi mdi-plus-circle"></md-icon>
       New Athlete
     </md-button>
   </div>
 </md-toolbar>
+
+<ui-view></ui-view>
 
 <md-content>
   <athletes-card
@@ -14,5 +16,6 @@
     class="md-padding"
     layout="row"
     layout-wrap
+    ng-hide="hideAthletes"
   ></athletes-card>
 </md-content>
