@@ -6,8 +6,10 @@ const port = process.env.PORT || 3001;
 const path = require("path");
 const routes = require("./routes/routes.js");
 
+console.log(port);
+
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "../client")));
+app.use("/", express.static(path.join(__dirname, "../client")));
 
 app.use("/", routes);
 

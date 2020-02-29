@@ -16,7 +16,6 @@ module.exports = {
     if (!classified._id) {
       classified._id = new mongoose.mongo.ObjectID();
     }
-    console.log(classified);
     return db
       .findByIdAndUpdate(classified._id, classified, {
         upsert: true,
