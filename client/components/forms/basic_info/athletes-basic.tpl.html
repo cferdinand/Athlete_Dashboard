@@ -1,0 +1,34 @@
+<md-content layout-padding>
+  <form>
+      <h2>Basic Info</h2>
+    <md-input-container>
+      <label for="name">Name*</label>
+      <input type="text" id="name" md-autofocus ng-model="athlete.name" required=""/>
+    </md-input-container>
+    <md-input-container>
+      <label for="date_of_birth">Date of Birth*</label>
+      <input type="text" id="date_of_birth" ng-model="athlete.date_of_birth" required=""/>
+    </md-input-container>
+    <md-input-container>
+      <label for="Gender">Gender*</label>
+      <input
+        type="text"
+        id="gender"
+        ng-model="athlete.gender"
+        required=""
+      ></input>
+    </md-input-container>
+    <md-input-container>
+      <label for="image">Image</label>
+      <input type="text" id="image" ng-model="athlete.image" />
+    </md-input-container>
+    <md-input-container>
+      <label for="image">Nationality</label>
+      <select ng-model="athlete.nationality" ng-options="country in countries" required=""></select>
+    </md-input-container>
+    <md-input-container>
+      <label for="sport">Sport</label>
+      <select ng-model="athlete.sport" ng-options="sport in sports" required=""></select>
+    </md-input-container>
+  </form>
+</md-content>
