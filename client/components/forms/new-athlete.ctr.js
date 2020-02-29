@@ -27,13 +27,19 @@
         });
       }
       function routeToAbout() {
-        $state.go("athletes.new.about");
+        $scope.showBasic = true; // reverse
+        $scope.showAbout = true;
+        $scope.showSummary = false;
       }
       function routeToBasic() {
-        $state.go("athletes.new.basic");
+        $scope.showAbout = false;
+        $scope.showBasic = false; // reverse
+        $scope.showSummary = false;
       }
       function routeToSummary() {
-        $state.go("athletes.new.summary");
+        $scope.showAbout = false;
+        $scope.showBasic = true; // reverse
+        $scope.showSummary = true;
       }
     });
 })();

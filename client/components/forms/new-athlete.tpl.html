@@ -2,9 +2,9 @@
   <h1 class="md-toolbar-tools">Add an Athlete</h1>
 </md-toolbar>
 <div class="links" layout="row" layout-align="center center">
-  <md-button ng-click="vm.routeToAbout()">About</md-button>
-  <md-button ng-click="vm.routeToBasic()">Basic</md-button>
-  <md-button ng-click="vm.routeToSummary()">Summary</md-button>
+    <md-button ng-click="vm.routeToBasic()">Basic</md-button>
+    <md-button ng-click="vm.routeToAbout()">About</md-button>
+    <md-button ng-click="vm.routeToSummary()">Summary</md-button>
 </div>
 
 <!-- Directives to display forms -->
@@ -47,11 +47,10 @@
 </md-button>
 <md-button class="md-warn" ng-click="vm.closeForm()">Cancel</md-button>
 
-<md-content>
-  <athletes-card
-    athletes="vm.athletes"
-    class="md-padding"
-    layout="row"
-    layout-wrap
-  ></athletes-card>
-</md-content>
+<div class="base-navigation" layout="row" layout-align="center center">
+    <md-button
+    ng-click="vm.showNext()"
+    class="md-primary"
+    >Next ></md-button
+    >
+</div>
