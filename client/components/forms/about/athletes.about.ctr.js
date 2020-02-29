@@ -3,7 +3,7 @@
 
   angular.module("ngAthletes").directive("aboutAthlete", function() {
     return {
-      templateUrl: "components/forms/about/athletes.about.tpl.html",
+      templateUrl: "components/forms/about/athletes-about.tpl.html",
       scope: {
         athletes: "=athletes"
         // athletesFilter: "=athletesFilter"
@@ -13,8 +13,6 @@
     };
     function aboutAthletesCtrl($state, $scope, $mdDialog) {
       let vm = this;
-      vm.routeToSummary = routeToSummary;
-      vm.routeToSummary = routeToSummary;
       //   function editAthlete(athlete) {
       //     // vm.editing = true;
       //     // openSidebar();

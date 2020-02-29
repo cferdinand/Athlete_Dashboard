@@ -1,4 +1,4 @@
-<md-content layout-padding ng-show=showAbout>
+<md-content layout-padding ng-hide=showAbout>
     <form>
         <h2>About</h2>
       <md-input-container>
@@ -32,7 +32,7 @@
       </md-input-container>
       <div class="navigation" layout="row" layout-align="center center">
           <md-button
-          ng-click="showSummary = true"
+          ng-click="showSummary()"
           class="md-primary"
           >Next ></md-button
           >
