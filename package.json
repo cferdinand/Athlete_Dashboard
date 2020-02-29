@@ -1,0 +1,40 @@
+{
+  "name": "athlete_dashboard",
+  "version": "1.0.0",
+  "description": "An Athlete Dashboard to add and view Athlete Information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "postinstall": "npm run copy-libs",
+    "update-deps": "npm update",
+    "postupdate-deps": "npm run copy-libs",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,@uirouter,mdi}/**/*\" client/lib -C"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cferdinand/Athlete_Dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cferdinand/Athlete_Dashboard/issues"
+  },
+  "homepage": "https://github.com/cferdinand/Athlete_Dashboard#readme",
+  "dependencies": {
+    "@mdi/font": "^2.2.43",
+    "@uirouter/angularjs": "^1.0.25",
+    "angular": "^1.7.9",
+    "angular-animate": "^1.7.9",
+    "angular-aria": "^1.7.9",
+    "angular-material": "^1.1.21",
+    "body-parser": "^1.19.0",
+    "cpx": "^1.5.0",
+    "express": "^4.17.1",
+    "mdi": "^2.2.43",
+    "mongodb": "^3.5.4",
+    "mongoose": "^5.9.2",
+    "node": "^13.8.0",
+    "nodemon": "^2.0.2"
+  }
+}
