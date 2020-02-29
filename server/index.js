@@ -7,7 +7,7 @@ const path = require("path");
 const routes = require("./routes/routes.js");
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "../client")));
+app.use(express.static(path.join(__dirname)));
 
 app.use("/", routes);
 
