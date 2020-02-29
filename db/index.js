@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const config = require("../config.js");
 
 mongoose.connect(process.env.MONGODB_URI || config.mongodb_uri, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
 
 const db = mongoose.connection;
@@ -24,13 +25,13 @@ const AthleteSchema = mongoose.Schema({
   About: String,
   Interests: String,
   Charities: String,
-  Social_Media_Handles: String,
+  Social_Media_Handles: Object,
   Pets: String,
   Drinks_Alcohol: Boolean,
   Married: Boolean,
   Profile_Image: String
 });
 
-const Athlete = mongoose.model("Classified", AthleteSchema);
+const Athlete = mongoose.model("Athletes", AthleteSchema);
 
 module.exports = Athlete;

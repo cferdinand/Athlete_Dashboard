@@ -13,15 +13,15 @@ module.exports = {
       });
   },
   updateOrAdd: classified => {
+    if (!classified._id) {
+      classified._id = new mongoose.mongo.ObjectID();
+    }
+    console.log(classified);
     return db
-      .findByIdAndUpdate(
-        { _id: classified.id || new mongoose.mongo.ObjectID() },
-        classified,
-        {
-          upsert: true,
-          new: true
-        }
-      )
+      .findByIdAndUpdate(classified._id, classified, {
+        upsert: true,
+        new: true
+      })
       .then(data => {
         return data;
       })
