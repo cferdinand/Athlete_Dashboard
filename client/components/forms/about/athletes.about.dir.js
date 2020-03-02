@@ -3,10 +3,9 @@
 
   angular.module("ngAthletes").directive("aboutAthlete", function() {
     return {
-      templateUrl: "components/forms/about/athletes-about.tpl.html",
+      templateUrl: "/components/forms/about/athletes-about.tpl.html",
       scope: {
         athlete: "=athlete"
-        // athletesFilter: "=athletesFilter"
       },
       controller: aboutAthletesCtrl,
       controllerAs: "vm"

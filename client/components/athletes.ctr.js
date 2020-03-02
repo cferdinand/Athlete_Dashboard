@@ -34,7 +34,7 @@
       });
 
       function checkUrl() {
-        if (window.location.hash.includes("new")) {
+        if (window.location.pathname.includes("new")) {
           $scope.hideAthletes = false;
         } else {
           $scope.hideAthletes = true;

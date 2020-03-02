@@ -3,7 +3,7 @@
 
   angular.module("ngAthletes").directive("basicAthlete", function() {
     return {
-      templateUrl: "components/forms/basic_info/athletes-basic.tpl.html",
+      templateUrl: "/components/forms/basic_info/athletes-basic.tpl.html",
       scope: {
         athlete: "=athlete"
       },

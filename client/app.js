@@ -4,13 +4,15 @@ angular
     $mdThemingProvider,
     $stateProvider,
     $locationProvider,
-    $routeProvider
+    $routeProvider,
+    $urlRouterProvider
   ) {
     $mdThemingProvider
       .theme("default")
       .primaryPalette("blue")
       .accentPalette("orange");
 
+    $urlRouterProvider.otherwise("/athletes");
     var athletes = {
       name: "athletes",
       url: "/athletes",
@@ -32,5 +34,4 @@ angular
         requireBase: false
       })
       .hashPrefix("");
-    $routeProvider.otherwise({ redirectTo: "/athletes" });
   });

@@ -3,7 +3,7 @@
 
   angular.module("ngAthletes").directive("summaryAthlete", function() {
     return {
-      templateUrl: "components/forms/summary/athletes-summary.tpl.html",
+      templateUrl: "/components/forms/summary/athletes-summary.tpl.html",
       scope: {
         athlete: "=athlete"
       },
