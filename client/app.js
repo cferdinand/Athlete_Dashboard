@@ -1,6 +1,11 @@
 angular
-  .module("ngAthletes", ["ngMaterial", "ui.router"])
-  .config(function($mdThemingProvider, $stateProvider, $locationProvider) {
+  .module("ngAthletes", ["ngMaterial", "ui.router", "ngRoute"])
+  .config(function(
+    $mdThemingProvider,
+    $stateProvider,
+    $locationProvider,
+    $routeProvider
+  ) {
     $mdThemingProvider
       .theme("default")
       .primaryPalette("blue")
@@ -21,4 +26,11 @@ angular
 
     $stateProvider.state(athletes);
     $stateProvider.state(newAthlete);
+    $locationProvider
+      .html5Mode({
+        enabled: true,
+        requireBase: false
+      })
+      .hashPrefix("");
+    $routeProvider.otherwise({ redirectTo: "/athletes" });
   });
