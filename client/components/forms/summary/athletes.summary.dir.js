@@ -13,11 +13,9 @@
     function summaryAthletesCtrl($state, $scope, $mdDialog) {
       let vm = this;
 
-      vm.routeToAbout = routeToAbout;
-      // vm.routeToBasic = routeToBasic;
-      // vm.routeToSummary = routeToSummary;
+      vm.routeToSection = routeToSection;
 
-      function routeToAbout(section) {
+      function routeToSection(section) {
         $scope.$emit("editingSection", section);
       }
     }

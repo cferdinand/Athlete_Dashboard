@@ -15,26 +15,11 @@
       let vm = this;
       vm.editAthlete = editAthlete;
 
-      function editAthlete() {
+      function editAthlete(option) {
+        if (option === "team") {
+          $scope.athlete.team.push($scope.athlete.team);
+        }
         $scope.$emit("changingField", $scope.athlete);
-      }
-      //   function saveClassified(classified) {
-      //     if (classified) {
-      //       classified.contact = {
-      //         name: "Christian Ferdinand",
-      //         phone: "(555) 555-5555",
-      //         email: "christianferdinand@mail.com"
-      //       };
-      //       classifiedsFactory
-      //         .addClassified(classified)
-      //         .then(function(newClassified) {
-      //           $scope.$emit("newClassified", newClassified.data);
-      //           vm.sidenavOpen = false;
-      //         });
-      //     }
-      //   }
-      function routeToSummary() {
-        $state.go("athletes.new.summary");
       }
     }
   });

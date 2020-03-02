@@ -1,10 +1,58 @@
-<md-content layout-padding>
-  <md-container>
-    <h2>About</h2>
-    <div class="description-summary">
-      <span>Description: </span>
-      <span>{{athlete.description}}</span>
+<md-content layout-padding class="summary">
+  <md-container layout="row" class="content-summary">
+    <div class="basic-summary">
+      <h2>Basic</h2>
+      <div class="name-summary">
+        <span>Name: </span>
+        <span>{{athlete.name}}</span>
+      </div>
+      <div class="date_of_birth-summary">
+        <span>Date of Birth: </span>
+        <span>{{athlete.date_of_brith}}</span>
+      </div>
+      <div class="gender-summary">
+        <span>Gender: </span>
+        <span>{{athlete.gender}}</span>
+      </div>
+      <div class="nationality-summary">
+        <span>Nationality: </span>
+        <span>{{athlete.nationality}}</span>
+      </div>
+      <div class="sport-summary">
+        <span>Sport: </span>
+        <span>{{athlete.sport}}</span>
+      </div>
     </div>
-    <md-button ng-click="vm.routeToAbout('About')">Edit</md-button>
+    <md-button class="summary-edit" ng-click="vm.routeToSection('Basic')"
+      >Edit</md-button
+    >
+  </md-container>
+  <md-container layout="row" class="content-summary">
+    <div class="about-summary">
+      <h2>About</h2>
+      <div class="description-summary">
+        <span>Description: </span>
+        <span>{{athlete.description}}</span>
+      </div>
+      <div class="location-summary">
+        <span>Location: </span>
+        <span>{{athlete.location}}</span>
+      </div>
+      <div class="team-summary">
+        <span>Team: </span>
+        <span>{{athlete.team}}</span>
+      </div>
+      <div class="charities-summary">
+        <span>Charities: </span>
+        <span>{{athlete.charities}}</span>
+      </div>
+      <div class="interests-summary">
+        <span>Interests: </span>
+        <span>{{athlete.interests}}</span>
+      </div>
+    </div>
+    <md-button class="summary-edit" ng-click="vm.routeToSection('About')"
+      >Edit</md-button
+    >
   </md-container>
 </md-content>

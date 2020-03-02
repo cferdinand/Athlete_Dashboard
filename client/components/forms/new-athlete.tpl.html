@@ -8,7 +8,7 @@
 </div>
 
 <!-- Directives to display forms -->
-<md-content ng-if="!showBasic">
+<md-content ng-if="showBasic">
   <basic-athlete
     athlete="vm.athlete"
     class="md-padding"
@@ -36,9 +36,9 @@
 </md-content>
 
 <md-button
-  ng-if="!editing"
-  ng-click="vm.saveAthlete(athlete)"
+  ng-click="vm.saveAthlete(vm.athlete)"
   class="md-primary"
+  ng-show="showSummary"
 >
   Save
 </md-button>
@@ -51,6 +51,7 @@
     <md-button
     ng-click="vm.showNext()"
     class="md-primary"
+    ng-hide="showSummary"
     >Next ></md-button
     >
 </div>

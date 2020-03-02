@@ -1,4 +1,4 @@
-<md-toolbar ng-hide="hideAthletes">
+<md-toolbar ng-show="hideAthletes" ng-hide="vm.checkUrl()">
   <div class="md-toolbar-tools">
     <p><strong>Athletes Dashboard</strong></p>
     <md-button ng-click="vm.addAthlete()">
@@ -16,6 +16,6 @@
     class="md-padding"
     layout="row"
     layout-wrap
-    ng-hide="hideAthletes"
+    ng-show="hideAthletes"
   ></athletes-card>
 </md-content>

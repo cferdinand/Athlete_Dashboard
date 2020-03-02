@@ -7,7 +7,7 @@
     </md-input-container>
     <md-input-container>
       <label for="date_of_birth">Date of Birth</label>
-      <input type="text" id="date_of_birth" ng-model="athlete.date_of_birth" value="athlete.date_of_birth" required=""/>
+      <input type="text" id="date_of_birth" ng-model="athlete.date_of_birth" value="athlete.date_of_birth" placeholder="yyyy/mm/dd" required=""/>
     </md-input-container>
     <md-input-container>
       <label for="Gender">Gender</label>
@@ -20,15 +20,15 @@
     </md-input-container>
     <div>
       <label for="profile_image">Image</label>
-      <input type="file" id="profile_image" ng-model="athlete.profile_image" value="athlete.profile_image" ng-change=vm.editAthlete(this)/>
+      <input type="file" id="profile_image" ng-model="athlete.profile_image" value="athlete.profile_image" ng-change=vm.editAthlete()/>
     </div>
     <md-input-container>
-      <label for="image">Nationality</label>
+        <label>Nationality</label>
       <select ng-model="athlete.nationality" ng-options="country for country in vm.countries" required=""></select>
     </md-input-container>
     <md-input-container>
       <label for="sport">Sport</label>
-      <select ng-model="athlete.sport" ng-options="sport for sport in vm.sports" required=""></select>
+      <select ng-model="athlete.sport" ng-options="sport for sport in vm.sports" required="" multiple></select>
     </md-input-container>
   </form>
 </md-content>

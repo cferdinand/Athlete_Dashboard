@@ -14,11 +14,10 @@
       let vm = this;
 
       vm.editAthlete = editAthlete;
-      vm.sports = ["Football", "Soccer"];
+      vm.sports = ["American Football", "Football"];
       vm.countries = ["Trinidad", "United States of America"];
 
-      function editAthlete(image) {
-        console.log(image);
+      function editAthlete() {
         $scope.$emit("changingField", $scope.athlete);
       }
     }

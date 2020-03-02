@@ -12,8 +12,9 @@
     ) {
       let vm = this;
       vm.addAthlete = addAthlete;
+      vm.checkUrl = checkUrl;
 
-      $scope.$on("newAthlete", function(athlete) {
+      $scope.$on("newAthlete", function(event, athlete) {
         vm.athletes.push(athlete);
         $state.go("athletes");
         showToast("Athlete Saved!");
@@ -24,17 +25,25 @@
       });
 
       $scope.$on("closedForm", function() {
-        $scope.hideAthletes = false;
+        $scope.hideAthletes = true;
+        vm.checkUrl();
       });
 
       athletesFactory.getAthletes().then(function(athletes) {
         vm.athletes = athletes.data;
       });
 
+      function checkUrl() {
+        if (window.location.hash.includes("new")) {
+          $scope.hideAthletes = false;
+        } else {
+          $scope.hideAthletes = true;
+        }
+      }
       function addAthlete() {
         $state.go("athletes.new");
         $timeout(function() {
-          $scope.hideAthletes = true;
+          $scope.hideAthletes = false;
         });
       }
 

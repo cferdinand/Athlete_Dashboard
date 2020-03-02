@@ -10,6 +10,11 @@
       vm.routeToAbout = routeToAbout;
       vm.routeToBasic = routeToBasic;
       vm.routeToSummary = routeToSummary;
+      vm.showNext = showNext;
+
+      $scope.showBasic = true;
+      $scope.showAbout = false;
+      $scope.showSummary = false;
 
       $scope.$on("changingField", function(event, athlete) {
         vm.athlete = athlete;
@@ -26,25 +31,33 @@
       }
 
       function saveAthlete(athlete) {
+        athlete.team = athlete.team.split(/[, |,]+/);
         athletesFactory.addAthlete(athlete).then(function(newAthlete) {
           $scope.$emit("newAthlete", newAthlete.data);
         });
       }
       function routeToAbout() {
-        $scope.showBasic = true; // reverse
+        $scope.showBasic = false;
         $scope.showAbout = true;
         $scope.showSummary = false;
       }
       function routeToBasic() {
-        console.log(vm.athlete);
         $scope.showAbout = false;
-        $scope.showBasic = false; // reverse
+        $scope.showBasic = true;
         $scope.showSummary = false;
       }
       function routeToSummary() {
         $scope.showAbout = false;
-        $scope.showBasic = true; // reverse
+        $scope.showBasic = false;
         $scope.showSummary = true;
+      }
+
+      function showNext() {
+        if ($scope.showAbout === false) {
+          vm.routeToAbout();
+        } else if ($scope.showSummary === false) {
+          vm.routeToSummary();
+        }
       }
     });
 })();

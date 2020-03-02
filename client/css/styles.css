@@ -1,3 +1,16 @@
 button .mdi {
   margin-bottom: 13px;
 }
+
+.summary {
+  width: 100%;
+}
+
+.content-summary {
+  justify-content: space-between;
+  width: 80%;
+}
+
+.summary-edit {
+  float: right;
+}
