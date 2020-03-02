@@ -2,33 +2,31 @@
     <form>
         <h2>About</h2>
       <md-input-container>
-        <label for="description">Description*</label>
-        <input type="text" id="description" md-autofocus ng-model="athlete.description" required=""/>
+        <label for="description">Description</label>
+        <input type="text" id="description" value="athlete.description" md-autofocus ng-model="athlete.description" ng-change=vm.editAthlete() required=""/>
       </md-input-container>
       <md-input-container>
-        <label for="location">location*</label>
-        <input type="text" id="location" ng-model="athlete.location" required=""/>
+        <label for="location">Location</label>
+        <input type="text" id="location" ng-model="athlete.location" value="athlete.location" ng-change=vm.editAthlete() required=""/>
       </md-input-container>
       <md-input-container>
-        <label for="Team">Team*</label>
+        <label for="Team">Team</label>
         <input
           type="text"
           id="team"
           ng-model="athlete.team"
+          value="athlete.team"
+          ng-change=vm.editAthlete()
           required=""
         ></input>
       </md-input-container>
       <md-input-container>
-        <label for="profile_image">Image</label>
-        <input type="text" id="profile_image" ng-model="athlete.profile_image" />
-      </md-input-container>
-      <md-input-container>
-        <label for="image">Charities</label>
-        <input ng-model="athlete.charities" required=""></input>
+        <label for="charities">Charities</label>
+        <input type="text" id="charities" ng-model="athlete.charities" value="athlete.charities" ng-change=vm.editAthlete() required=""></input>
       </md-input-container>
       <md-input-container>
         <label for="interests">Interests</label>
-        <select ng-model="athlete.interests" required=""></select>
+        <input ng-model="athlete.interests" value="athlete.interests" ng-change=vm.editAthlete() required=""></input>
       </md-input-container>
     </form>
   </md-content>

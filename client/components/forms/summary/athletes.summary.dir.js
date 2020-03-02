@@ -5,13 +5,21 @@
     return {
       templateUrl: "components/forms/summary/athletes-summary.tpl.html",
       scope: {
-        athletes: "=athletes"
+        athlete: "=athlete"
       },
       controller: summaryAthletesCtrl,
       controllerAs: "vm"
     };
     function summaryAthletesCtrl($state, $scope, $mdDialog) {
       let vm = this;
+
+      vm.routeToAbout = routeToAbout;
+      // vm.routeToBasic = routeToBasic;
+      // vm.routeToSummary = routeToSummary;
+
+      function routeToAbout(section) {
+        $scope.$emit("editingSection", section);
+      }
     }
   });
 })();

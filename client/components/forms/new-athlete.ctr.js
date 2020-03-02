@@ -3,18 +3,22 @@
 
   angular
     .module("ngAthletes")
-    .controller("newAthletesCtrl", function(
-      $state,
-      $scope,
-      athletesFactory,
-      $timeout
-    ) {
+    .controller("newAthletesCtrl", function($state, $scope, athletesFactory) {
       var vm = this;
       vm.closeForm = closeForm;
       vm.saveAthlete = saveAthlete;
       vm.routeToAbout = routeToAbout;
       vm.routeToBasic = routeToBasic;
       vm.routeToSummary = routeToSummary;
+
+      $scope.$on("changingField", function(event, athlete) {
+        vm.athlete = athlete;
+      });
+
+      $scope.$on("editingSection", function(event, section) {
+        let fn = `routeTo${section}`;
+        vm[fn]();
+      });
 
       function closeForm() {
         $scope.$emit("closedForm");
@@ -32,6 +36,7 @@
         $scope.showSummary = false;
       }
       function routeToBasic() {
+        console.log(vm.athlete);
         $scope.showAbout = false;
         $scope.showBasic = false; // reverse
         $scope.showSummary = false;

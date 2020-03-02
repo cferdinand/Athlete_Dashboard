@@ -1,6 +1,6 @@
 angular
   .module("ngAthletes", ["ngMaterial", "ui.router"])
-  .config(function($mdThemingProvider, $stateProvider) {
+  .config(function($mdThemingProvider, $stateProvider, $locationProvider) {
     $mdThemingProvider
       .theme("default")
       .primaryPalette("blue")

@@ -5,7 +5,7 @@
     return {
       templateUrl: "components/forms/about/athletes-about.tpl.html",
       scope: {
-        athletes: "=athletes"
+        athlete: "=athlete"
         // athletesFilter: "=athletesFilter"
       },
       controller: aboutAthletesCtrl,
@@ -13,15 +13,11 @@
     };
     function aboutAthletesCtrl($state, $scope, $mdDialog) {
       let vm = this;
-      //   function editAthlete(athlete) {
-      //     // vm.editing = true;
-      //     // openSidebar();
-      //     // vm.athlete = athlete;
-      //     $state.go("athletes.edit", {
-      //       id: athlete._id,
-      //       athlete: athlete
-      //     });
-      //   }
+      vm.editAthlete = editAthlete;
+
+      function editAthlete() {
+        $scope.$emit("changingField", $scope.athlete);
+      }
       //   function saveClassified(classified) {
       //     if (classified) {
       //       classified.contact = {

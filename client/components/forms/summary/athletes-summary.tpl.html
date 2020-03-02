@@ -1,2 +1,10 @@
-<h1>HELLLO</h1>
-<input />
+<md-content layout-padding>
+  <md-container>
+    <h2>About</h2>
+    <div class="description-summary">
+      <span>Description: </span>
+      <span>{{athlete.description}}</span>
+    </div>
+    <md-button ng-click="vm.routeToAbout('About')">Edit</md-button>
+  </md-container>
+</md-content>

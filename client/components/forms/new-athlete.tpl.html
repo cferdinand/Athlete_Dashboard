@@ -10,7 +10,7 @@
 <!-- Directives to display forms -->
 <md-content ng-if="!showBasic">
   <basic-athlete
-    athletes="vm.athletes"
+    athlete="vm.athlete"
     class="md-padding"
     layout="row"
     layout-wrap
@@ -19,7 +19,7 @@
 
 <md-content ng-if="showAbout">
   <about-athlete
-    athletes="vm.athletes"
+    athlete="vm.athlete"
     class="md-padding"
     layout="row"
     layout-wrap
@@ -28,7 +28,7 @@
 
 <md-content ng-if="showSummary">
   <summary-athlete
-    athletes="vm.athletes"
+    athlete="vm.athlete"
     class="md-padding"
     layout="row"
     layout-wrap

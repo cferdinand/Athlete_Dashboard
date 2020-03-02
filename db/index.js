@@ -5,7 +5,6 @@ mongoose.connect(process.env.MONGODB_URI || config.mongodb_uri, {
   useNewUrlParser: true,
   useFindAndModify: false
 });
-console.log(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
 
