@@ -24,7 +24,7 @@
   "dependencies": {
     "@mdi/font": "^2.2.43",
     "@uirouter/angularjs": "^1.0.25",
-    "angular": "^1.7.9",
+    "angular": "^1.8.0",
     "angular-animate": "^1.7.9",
     "angular-aria": "^1.7.9",
     "angular-material": "^1.1.21",
